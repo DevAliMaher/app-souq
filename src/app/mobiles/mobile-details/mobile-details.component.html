@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+      <h5 class="text-center text-uppercase mb-3">
+        {{ mobile.mobileBrand }} {{ mobile.mobileName }} {{ mobile.mobileModel }}
+        {{ mobile.description.mobileNetwork }}
+      </h5>
+      <div class=" text-center">
+        <img class="img-fluid mobile-image" [src]="mobile.mobileImgPath" alt="" />
+      </div>
+
+    </div>
+    <div class="col-lg-4 col-md-6 text-left mb-4">
+      <h3 class="text-primary">{{ mobile.mobilePrice | number }} EGP</h3>
+      <p class="text-secondary">All prices include VAT</p>
+      <hr />
+      <p class="font-weight-bold">Color :</p>
+      <button class=" btn btn-warning btn-block mb-2 font-weight-bold">
+        {{ mobile.description.mobileColor | uppercase }}
+      </button>
+      <p class="font-weight-bold">Ram :</p>
+      <button class=" btn btn-outline-dark  mb-2 font-weight-bold">
+        {{ mobile.description.mobileRam }} GB
+      </button>
+      <p class="font-weight-bold">Storage :</p>
+      <button class=" btn btn-outline-dark  mb-2 font-weight-bold">
+        {{ mobile.description.mobileStorage }} GB
+      </button>
+      <hr />
+      <h5>Description :</h5>
+      <li>Brand: {{ mobile.mobileBrand }}</li>
+      <li>Model: {{ mobile.mobileName }} {{ mobile.mobileModel }}</li>
+      <li>RAM: {{ mobile.description.mobileRam }}</li>
+      <li>Screen Size: {{ mobile.description.mobileScreenSize }}</li>
+      <li>Storage: {{ mobile.description.mobileStorage }}</li>
+      <li>Camera: {{ mobile.description.mobileCamera }}</li>
+      <li>Network: {{ mobile.description.mobileNetwork }}</li>
+    </div>
+    <div class="col-lg-4 ">
+      <p class="border p-4">
+        Want it tomorrow? Order before 8 PM Select Next Day Delivery on
+        checkout.
+      </p>
+      <button class="btn btn-info btn-block" (click)="onAddToCart()">
+        ADD To Cart
+      </button>
+      <div *ngIf="askLogIn">
+        <p class="text-danger mt-3">You have to Log in</p>
+      </div>
+    </div>
+  </div>
+</div>

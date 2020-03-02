@@ -1,0 +1,50 @@
+div {
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
+
+.top-adds {
+  a {
+    cursor: pointer;
+    display: inline-block;
+    height: 4rem;
+  }
+}
+
+.carousel-adds {
+  height: 20rem;
+  width: 100%;
+
+  .carousel-adds-img {
+    height: 100%;
+    width: 100%;
+    &:hover {
+        cursor: pointer;
+    }
+  }
+  .arrows {
+    .arrow {
+      background-color: transparent;
+      font-size: 2rem;
+      font-weight: 800;
+      color: rgba(232, 235, 238, 0.3);
+      position: absolute;
+      top: 45%;
+      &:hover {
+        cursor: pointer;
+        color: rgba(197, 199, 202, 0.3);
+      }
+    }
+    .left-arrow {
+      left: 0;
+    }
+    .right-arrow {
+      right: 0;
+    }
+  }
+}
+
+.adds-img-bottom-pointer {
+  cursor: pointer;
+}

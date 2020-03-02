@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="form-group mx-auto select-cat">
+      <div class="text-center" *ngIf="mobileEdited">
+        <hr />
+        <p class="text-success">New Mobile Edited</p>
+      </div>
+      <form [formGroup]="selectCatForm">
+        <select class="form-control text-capitalize" formControlName="selectCat">
+          <option [ngValue]="null" disabled>Select</option>
+          <option *ngFor="let cat of categories">{{ cat }}</option>
+        </select>
+      </form>
+      <a class="btn btn-primary btn-block mx-auto mt-3 mb-3 new-item" routerLink="/admin/new-product">New Item</a>
+      </div>
+      <hr />
+  <ul class="list-group" *ngIf="selectCatForm.get('selectCat').value === 'mobiles'">
+    <li class="list-group-item" *ngFor="let mobile of mobiles; let i = index">
+      <div class="row align-items-center">
+        <div class="col-2">
+          <img class="mobile-img" [src]="mobile.mobileImgPath" alt="" />
+        </div>
+        <div class="col-7 col-sm-8">
+          <h5 class="text-uppercase">
+            {{ mobile.mobileBrand }} {{ mobile.mobileName }}
+            {{ mobile.mobilePrice }} EGP
+          </h5>
+        </div>
+        <div class="col-1 text-center">
+          <a style="cursor: pointer;" [routerLink]="[i]">
+            <fa-icon class="text-warning" [icon]="faEdit"></fa-icon>
+          </a>
+        </div>
+        <div class="col-1 text-center">
+          <a style="cursor: pointer;" (click)="onDeleteItem(i)">
+            <fa-icon class="text-danger" [icon]="faTrash"></fa-icon>
+          </a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

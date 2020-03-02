@@ -1,0 +1,33 @@
+<div class="row border p-0">
+  <div class="col-3 border-right p-3 d-flex align-items-center">
+    <a class="mobile-img" [routerLink]="[index]">
+      <img class="img-fluid" [src]="mobile.mobileImgPath" alt="">
+    </a>
+  </div>
+  <div class="col-6 px-3 py-1 text-center">
+    <div class="text-left">
+      <a class="font-weight-bold mobile-desc" [routerLink]="[index]">
+        {{mobile.mobileBrand}}
+        {{mobile.mobileName}} {{mobile.mobileModel}} -
+        {{mobile.description.mobileColor}} -
+        {{mobile.description.mobileRam}} GB RAM -
+        {{mobile.description.mobileScreenSize}} inch -
+        {{mobile.description.mobileStorage}} GB Storage
+      </a>
+    </div>
+    <div class="mt-4 mb-2 text-left">
+      <a class="btn btn-outline-primary text-primary p-1 mobile-storage">
+        {{mobile.description.mobileStorage}} GB
+      </a>
+      <ul class="min-details text-black-50 pl-4 mt-2 d-none d-sm-block">
+        <li>Camera Resolution: {{mobile.description.mobileCamera}} mp</li>
+        <li>RAM: {{mobile.description.mobileRam}}</li>
+        <li>Networking: {{mobile.description.mobileNetwork}}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-3 px-3 py-1 border-left d-flex flex-column justify-content-center align-items-center">
+    <p class="text-primary font-weight-bold mobile-price text-center">{{mobile.mobilePrice | number:'1.2'}} EGP</p>
+    <button class="btn btn-light px-3 px-sm-4 px-md-5 details-button" [routerLink]="[index]">Details</button>
+  </div>
+</div>

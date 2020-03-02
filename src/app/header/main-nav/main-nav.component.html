@@ -1,0 +1,70 @@
+<div class="main-nav d-none d-md-block position-relative">
+    <div class="container-lg">
+      <ul class="main-nav-list">
+        <!-- all Categories -->
+        <li class="main-nav-item">
+          <a class="main-nav-link main-nav-link-all">All Categories</a>
+        </li>
+        <!-- end of  all Categories -->
+        <!-- Electronics -->
+        <li class="main-nav-item">
+          <a class="main-nav-link" (mouseenter)="onOpenElec()" (mouseleave)="onCloseElec()">
+            Electronics
+          </a>
+        </li>
+        <!-- end of Electronics -->
+        <!-- mobile -->
+        <li class="main-nav-item">
+          <a class="main-nav-link" (mouseenter)="onOpenMobile()" (mouseleave)="onCloseMobile()" (click)="onNavMobiles()"
+            routerLinkActive="active-link">
+            Mobiles
+            <div class="drop-menu p-3" *ngIf="mobile">
+              <div class="row w-100">
+                <div class="col-3 d-flex flex-column">
+                  <p>Brand</p>
+                  <a class="drop-menu-link">samsung</a>
+                  <a class="drop-menu-link">Apple</a>
+                  <a class="drop-menu-link">Huawei</a>
+                </div>
+                <div class="col-3 d-flex flex-column">
+                  <p>Price</p>
+                  <a class="drop-menu-link" (click)="onNavAllMobiles($event)">Shop All Mobiles</a>
+                  <a class="drop-menu-link" (click)="onNavCheapMobiles()">1,000-9,999 EGP</a>
+                  <a class="drop-menu-link">1,0000-19,999 EGP</a>
+                  <a class="drop-menu-link">20,000 &Above EGP</a>
+                </div>
+                <div class="col-6 text-center">
+                  <a class="drop-menu-link"><img class="img-fluid"
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvSfSSB1J0DmmkuCTf9eddhJS3ihWC7JBOb-kAf_rNMLvFF4wn&s"
+                      alt=""></a>
+                </div>
+              </div>
+            </div>
+          </a>
+        </li>
+        <!-- end of Mobiles -->
+        <!-- home -->
+        <li class="main-nav-item">
+          <a class="main-nav-link" (mouseenter)="onOpenHome()" (mouseleave)="onCloseHome()">
+            Home Appliance
+          </a>
+        </li>
+        <!-- end of  Home -->
+        <!-- Toys -->
+        <li class="main-nav-item">
+          <a class="main-nav-link" (mouseenter)="onOpenToys()" (mouseleave)="onCloseToys()">
+            Toys
+          </a>
+        </li>
+        <!-- end of  Toys -->
+        <!-- Fashion -->
+        <li class="main-nav-item">
+          <a class="main-nav-link" (mouseenter)="onOpenFashion()" (mouseleave)="onCloseFashion()">
+            Fashion
+          </a>
+        </li>
+        <!-- end of  Fashion -->
+      </ul>
+    </div>
+  </div>
+  

@@ -1,0 +1,22 @@
+  <a class="card" [routerLink]="[index]" >
+    <div class="p-2">
+      <img [src]="mobile.mobileImgPath" class="card-img-top img-fluid product-img" alt="">
+      <div class="card-body p-1 mt-3">
+        <div class="row h-100">
+          <div class="col-12 desc-text">
+            <p class="card-title font-weight-bold mb-sm-0">
+              {{mobile.mobileBrand | titlecase}}<br> {{mobile.mobileName | titlecase}} {{mobile.mobileModel | titlecase}}
+            </p>
+            <p class="card-text" 
+            >
+            {{mobile.description.mobileColor}}-{{mobile.description.mobileRam}} GB RAM-{{mobile.description.mobileStorage}} GB 
+          </p>
+          </div>
+          <div class="col-12">
+            <h5 class="text-center text-primary">{{mobile.mobilePrice}}</h5>
+          </div>
+        </div> <!-- card body row -->
+      </div>
+    </div>
+  </a>
+  

@@ -1,0 +1,71 @@
+<!-- top-nav -->
+<div class="bg-dark d-none d-md-block">
+  <div class="container-lg">
+    <ul class="nav flex-row-reverse">
+      <li class="nav-item">
+        <a class="nav-link text-white py-1 px-0">{{lang}}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white py-1 px-0">Daily Deals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white py-1 px-0">Daily Deals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-link-end text-white py-1 px-0" *ngIf="!isUser">Create Account</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- end of top-nav -->
+<!-- md-nav -->
+<div class="sticky-top bg-light md-nav">
+  <div class="container-lg">
+    <nav class="navbar navbar-light pr-0">
+      <div class="row w-100 align-content-center">
+        <div class="col-6 col-sm-3">
+          <ng-content></ng-content>
+          <a class="navbar-brand text-uppercase text-primary font-weight-bold mr-auto" 
+          [routerLink]="['']">shop</a>
+        </div>
+        <div class="col-6 d-none d-sm-block px-0">
+          <form (ngModelChange)="onSearch()">
+            <div class="input-group">
+              <input class="form-control" type="text" name="search" placeholder="Search" [(ngModel)]="searchItem">
+              <div class="input-group-append">
+                <button class="btn btn-primary px-4 search-button" type="submit">
+                  <fa-icon [icon]="faSearch"></fa-icon>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-6 col-sm-3 text-right px-0">
+          <div class="d-flex justify-content-end align-items-center">
+            <div class="account px-0 py-2" (mouseenter)="onOpenAccount()" (mouseleave)="onCloseAccount()">
+              <fa-icon [icon]="faSortDown" class="mr-1"></fa-icon> 
+              <span class="mt-1 d-inline-block">Account</span>
+              <div class="account-dropdown p-3 border bg-white text-center" *ngIf="accountDropDown">
+                <a routerLink="/user" class="btn btn-primary px-4 px-md-5 mb-1" *ngIf="!isUser">Log In</a>
+                <a (click)="onLogOut()" class="btn btn-primary px-4 px-md-5 mb-1" *ngIf="isUser">Log Out</a>
+                <p class="text-secondary" style="font-size: 0.8rem;" *ngIf="!isUser">You Don`t have Account!</p>
+                <a routerLink="/user/sign-up" class="text-secondary sign-up font-weight-bold" *ngIf="!isUser">Sign Up</a>
+                <hr>
+                <a routerLink="/admin/products" class="text-secondary sign-up font-weight-bold" *ngIf="isUser">Admin</a>
+
+              </div>
+            </div>
+            <button class="d-block border-0 bg-light px-0 shopping-cart-button" routerLink="/shopping-cart" [disabled]="!isUser">
+              <fa-icon [icon]="faShoppingCart"  class="text-primary shopping-cart"></fa-icon>
+              
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- end of md-nav -->
+<!-- main-nav -->
+<app-main-nav></app-main-nav>
+<!-- end of main-nav -->

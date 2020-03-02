@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      adds
+    </div>
+    <!-- adds -->
+    <div class="col-12 mt-4">
+      <h4>All Mobiles</h4>
+      <div class="row flex-nowrap overflow-auto">
+        <app-mobile-item
+          class="col-4 col-md-2 px-1 mb-2"
+          *ngFor="let mobile of mobiles"
+          [mobile]="mobile"
+          [index]="mobile.id"
+        ></app-mobile-item>
+      </div>
+    </div>
+    <!-- all-mobiles col -->
+    <div class="col-12 mt-4">
+      <h4>Mobiles from 1000 to 9,999</h4>
+      <div class="row flex-nowrap overflow-auto">
+        <app-mobile-item
+          class="col-4 col-md-2 px-1 mb-2"
+          *ngFor="let mobile of cheapMobiles"
+          [mobile]="mobile"
+          [index]="mobile.id"
+        ></app-mobile-item>
+      </div>
+    </div>
+    <!-- cheap-mobiles col -->
+    <div class="col-12 mt-4">
+      <h4>Mobiles from 10,000 to 19,999</h4>
+      <div class="row flex-nowrap overflow-auto">
+        <app-mobile-item
+          class="col-4 col-md-2 px-1 mb-2"
+          *ngFor="let mobile of mediumMobiles"
+          [mobile]="mobile"
+          [index]="mobile.id"
+        ></app-mobile-item>
+      </div>
+    </div>
+    <!-- medium-mobiles col -->
+    <div class="col-12 mt-4">
+      <h4>Mobiles from 20,000 && Above</h4>
+      <div class="row flex-nowrap overflow-auto">
+        <app-mobile-item
+          class="col-4 col-md-2 px-1 mb-2"
+          *ngFor="let mobile of highMobiles"
+          [mobile]="mobile"
+          [index]="mobile.id"
+        ></app-mobile-item>
+      </div>
+    </div>
+    <!-- high-mobiles col -->
+    <div class="col-12 mt-4">
+      <h4>Apple Mobiles</h4>
+      <div class="row flex-nowrap overflow-auto">
+        <app-mobile-item
+          class="col-4 col-md-2 px-1 mb-2"
+          *ngFor="let mobile of appleMobiles"
+          [mobile]="mobile"
+          [index]="mobile.id"
+        ></app-mobile-item>
+      </div>
+    </div>
+    <!-- apple-mobiles col -->
+    <div class="col-12 mt-4">
+      <h4>Samsung Mobiles</h4>
+      <div class="row flex-nowrap overflow-auto">
+        <app-mobile-item
+          class="col-4 col-md-2 px-1 mb-2"
+          *ngFor="let mobile of samsungMobiles"
+          [mobile]="mobile"
+          [index]="mobile.id"
+        ></app-mobile-item>
+      </div>
+    </div>
+    <!-- samsung-mobiles col -->
+    <div class="col-12 mt-4">
+      <h4>Huawei Mobiles</h4>
+      <div class="row flex-nowrap overflow-auto">
+        <app-mobile-item
+          class="col-4 col-md-2 px-1 mb-2"
+          *ngFor="let mobile of huaweiMobiles"
+          [mobile]="mobile"
+          [index]="mobile.id"
+        ></app-mobile-item>
+      </div>
+    </div>
+    <!-- huawei-mobiles col -->
+    <!--  -->
+  </div>
+</div>

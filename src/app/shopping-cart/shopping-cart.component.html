@@ -1,0 +1,77 @@
+<div class="container-fluid">
+  <!-- case no items -->
+  <div class="row mb-5 pb-5" *ngIf="selectedMobiles.length < 1">
+    <div class="col-12 mb-5">
+      <p class="font-weight-bold text-uppercase">Sopping Cart (0)</p>
+      <p class="bg-warning p-4">
+        Shopping cart is currently empty <br />
+        Add items to your cart and view them here before you checkout. <br />
+        <a routerLink="/"> Continue shopping!</a>
+      </p>
+    </div>
+  </div>
+  <!-- case no items -->
+  <!-- case  items added -->
+  <div class="row" *ngIf="selectedMobiles.length >= 1">
+    <div class="col-md-8 mb-3">
+      <p class="font-weight-bold text-uppercase">
+        Sopping Cart ({{ selectedMobiles.length }})
+      </p>
+      <!-- shopping list -->
+      <ul class="list-group">
+        <li
+          class="bg-white list-group-item"
+          *ngFor="let mobile of selectedMobiles; let i = index"
+        >
+          <div class="row align-items-center justify-content-center">
+            <div class="col-3 ">
+              <img
+                [src]="mobile.mobileImgPath"
+                alt=""
+                class="img-fluid cart-img"
+              />
+            </div>
+            <div class="col-8">
+              <p class="text-uppercase font-weight-bold mb-1 mobile-title">
+                {{ mobile.mobileName }} {{ mobile.mobileBrand }}
+                  {{ mobile.mobileModel }}
+              </p>
+              <p class="text-dark mb-1 mobile-desc">
+                {{ mobile.description.mobileRam }} GB Ram, Screen Size:
+                {{ mobile.description.mobileScreenSize }}, Storage:
+                {{ mobile.description.mobileStorage }}
+              </p>
+              <p class="text-primary font-weight-bold mobile-price mb-0">{{ mobile.mobilePrice}} EGP</p>
+            </div>
+            <div class="col-1 text-center px-0">
+              <div class="form-group">
+                <input type="checkbox" (click)="onSelect(i)" [value]="i" [id]="i">
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="d-flex w-100 mt-3">
+        <button
+          class="btn btn-warning py-0 mr-3 font-weight-bold"
+          (click)="onDelete()"
+        >
+          Delete
+        </button>
+
+      </div>
+      <!-- shopping list -->
+    </div>
+    <div class="col-md-4">
+      <div class="bg-white border mb-3 p-3">
+        <p class="font-weight-bold mb-1">Total:</p>
+        <p class="text-success font-weight-bold">{{ totalPrice }} EGP</p>
+      </div>
+      <button class="btn btn-success btn-block text-uppercase">
+        proceed to checkout
+      </button>
+    </div>
+  </div>
+  <!-- case items added -->
+</div>

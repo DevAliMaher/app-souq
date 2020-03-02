@@ -1,0 +1,83 @@
+<div *ngIf="isLoading" class="w-100 text-center mx-auto my-5 py-5">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div class="sign-form mx-auto p-3 my-5 py-5 " *ngIf="successesSignIn && !isLoading">
+  <p class="text-center text-success mb-5 text-uppercase">
+    Sign In Successfully
+  </p>
+</div>
+
+<div class="sign-form mx-auto p-3 mb-3" *ngIf="successesSignUp">
+  <p class="text-center text-success mb-0 text-uppercase">
+    Sign Up Successfully
+  </p>
+</div>
+
+<div class="container-fluid" *ngIf="!isLoading">
+  <div class="sign-form mx-auto border bg-white p-3 mb-3" *ngIf="!isUser || successesSignUp">
+    <div class="error text-center w-100 p-2" *ngIf="error">
+      <p class="font-weight-bold text-light text-uppercase">{{ error }}</p>
+    </div>
+    <p class="font-weight-bold text-center text-uppercase">Sign In</p>
+    <form (ngSubmit)="onSubmit(signIn)" #signIn="ngForm">
+      <div class="form-group">
+        <input
+          type="email"
+          [placeholder]="
+            email.untouched ? 'Your Email' : 'Please Enter Your Email'
+          "
+          class="form-control"
+          ngModel
+          name="email"
+          required
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          #email="ngModel"
+        />
+      </div>
+      <!-- email -->
+      <div class="form-group mb-2 position-relative">
+        <input
+          type="password"
+          [placeholder]="
+            password.untouched
+              ? 'Passwords must be at least 6 characters'
+              : 'Please Enter Valid Password'
+          "
+          class="form-control"
+          ngModel
+          name="password"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          #password="ngModel"
+          #pass
+        />
+
+        <div class="form-group form-check mt-2 mb-0">
+          <input
+            (click)="onShowPassword(pass)"
+            type="checkbox"
+            class="form-check-input"
+          />
+          <label class="form-check-label">Show Password</label>
+        </div>
+      </div>
+      <!-- password -->
+      <div>
+        <button
+          type="submit"
+          [disabled]="!signIn.valid"
+          class="btn btn-warning btn-block font-weight-bold"
+        >
+          Sign in
+        </button>
+      </div>
+    </form>
+    <div class="create-account mx-auto mb-3" *ngIf="!successesSignUp">
+      <hr />
+      <button class="btn btn-secondary btn-block" routerLink="/user/sign-up">
+        Create New Account
+      </button>
+    </div>
+  </div>
+</div>

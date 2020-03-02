@@ -1,0 +1,18 @@
+.cart-img {
+    height: 5rem;
+}
+
+@media (max-width: 575.98px) {
+    .cart-img {
+        height: 3rem;
+    } 
+    .mobile-title {
+        font-size: 0.8rem;
+    }
+    .mobile-desc {
+        font-size: 0.8rem;
+    }
+    .mobile-price {
+        font-size: 0.8rem;
+    }
+}

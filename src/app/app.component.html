@@ -1,0 +1,87 @@
+<div
+  class="container-fluid app-container"
+  id="main-container"
+  [ngClass]="{ 'main-container': isOpened }"
+>
+  <div class="row flex-nowrap">
+    <!-- side nav -->
+    <div
+      class="col-md-3 col-sm-5 col-6 px-0 side-nav bg-dark"
+      id="side-nav"
+      [@isOpen]="isOpened ? 'opened' : 'closed'"
+    >
+      <div class="list-group">
+        <a
+          class="list-group-item list-group-item-action bg-dark text-white"
+          (click)="onCloseSideNav()"
+          routerLink=""
+        >
+          Home
+        </a>
+        <div
+          class="bg-secondary text-black p-2 text-uppercase font-weight-bold"
+        >
+          categories
+        </div>
+        <div class="dropdown">
+          <div
+            class="list-group-item bg-dark text-white side-nav-drop"
+            (click)="onOpenSideNavTab()"
+          >
+            Mobiles
+          </div>
+          <div *ngIf="openSideNavTab">
+            <a
+              class="list-group-item list-group-item-action bg-secondary text-white"
+              routerLink="/mobiles"
+              (click)="onCloseSideNav()"
+            >
+              Mobiles
+            </a>
+          </div>
+          <div *ngIf="openSideNavTab">
+            <a
+              class="list-group-item list-group-item-action bg-secondary text-white"
+              routerLink="/mobiles-list"
+              (click)="onCloseSideNav()"
+            >
+              All Mobiles
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of side-nav -->
+    <!-- main-page-warper -->
+    <div class="col-12 px-0 main-page">
+      <!-- modal -->
+      <div
+        id="side-modal"
+        [ngClass]="{ 'side-modal': isOpened }"
+        (click)="onCloseSideNav()"
+      ></div>
+      <!-- end of modal -->
+      <!-- header -->
+      <app-header class="header">
+        <button
+          class="navbar-toggler border-0 md-nav-button"
+          type="button"
+          (click)="onAnimateSideNav()"
+        >
+          <fa-icon [icon]="faBars" style="color: rgb(65, 107, 245);"></fa-icon>
+        </button>
+      </app-header>
+      <!-- end of header -->
+      <!-- router-outlet-warper -->
+      <div class="container-lg p-3 router-outlet">
+        <router-outlet></router-outlet>
+      </div>
+      <!-- end of router-outlet-warper -->
+      <!-- footer -->
+      <app-footer></app-footer>
+      <!-- end of footer -->
+    </div>
+    <!-- end of main-page-warper -->
+  </div>
+  <!-- end of main-row -->
+</div>

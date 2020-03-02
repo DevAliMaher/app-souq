@@ -1,0 +1,49 @@
+.card {
+    width: 99%;
+    height: 20rem;
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+    }
+    .product-img {
+        height: 8rem;
+    }
+    .card-body {
+        height: 10rem;
+         .desc-text {
+        height: 7rem;
+        .card-title {
+            font-size: .9rem;
+            height: 3rem;
+            color: black;
+        }
+        .card-text {
+            font-size: 0.9rem;
+            color: black;
+        }
+    }
+    }
+}
+
+@media (max-width: 575.98px) { 
+    .card {
+        height: 18rem;
+        .product-img {
+            height: 6rem;
+        }
+        .card-body {
+             .desc-text {
+            .card-title {
+                font-size: 0.8rem;
+                height: 2.5rem;
+            }
+            .card-text {
+                font-size: 0.8rem;
+            }
+        }
+        }
+        h5{
+            font-size: 1rem;
+        } 
+    }
+}

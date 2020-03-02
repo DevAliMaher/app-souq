@@ -1,0 +1,27 @@
+.sign-form {
+    width: 21rem;
+    input.ng-invalid.ng-touched {
+        border: 1px solid rgb(253, 89, 67);
+        box-shadow: inherit;
+     }
+     .error {
+         background-color: rgb(226, 129, 129);
+         border-radius: 3px;
+     }
+     input::placeholder {
+         font-size: 0.8rem;
+     }
+    label {
+        font-size: 0.8rem;
+    }
+    p {
+        margin-top: .5rem;
+        font-size: 0.8rem;
+    }
+    // .password-error {
+    //     position: absolute;
+    //     background-color: white;
+    //     top: -150%;
+    //     z-index: 10;
+    // }
+}

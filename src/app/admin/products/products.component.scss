@@ -1,0 +1,16 @@
+.select-cat {
+    width: 21rem;
+}
+
+.mobile-img {
+    height: 2rem;
+}
+.mobile-item {
+    max-height: 5rem;
+}
+
+@media (max-width: 575.98px) {
+    h5 {
+        font-size: 0.8rem;
+    }
+  }

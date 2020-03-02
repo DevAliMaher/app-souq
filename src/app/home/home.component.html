@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <!-- top adds -->
+  <div class="row">
+    <div class="col-sm-12">
+      <p class="text-danger">Only Mobiles Section Is Functional</p>
+    </div>
+    <div class="col-lg-6 col-md-12  top-adds">
+      <a class="d-flex align-items-center justify-content-between border px-2">
+        <img
+          src="https://cms.souqcdn.com/spring/cms/en/global/deals-en2.png"
+          alt=""
+          class="img-fluid"
+        />
+        <div class="d-none d-sm-flex">
+          <p class="mb-0 pr-2" style="font-size: 0.8rem;">New Sales</p>
+          <p class="mb-0 text-primary" style="font-size: 0.8rem;">|</p>
+          <p class="font-weight-bold mb-0 pl-2" style="font-size: 0.8rem;">
+          Fast Shipping
+        </p>
+        </div>
+        <button class="btn btn-dark py-1 px-3" style="font-size: 0.8rem;">Shop Now</button>
+      </a>
+    </div>
+    <div class="col-6  d-none d-lg-block top-adds">
+      <a class="w-100 h-100">
+        <img
+          src="https://cms.souqcdn.com/sanfronto/eg/2020/web/Banners/top-leaderboard/Jan/TV_LB_En.jpg"
+          alt=""
+          class="img-fluid w-100 h-100"
+        />
+      </a>
+    </div>
+  </div>
+  <!-- end of top-adds -->
+  <!-- carousel adds -->
+  <div class="row my-3">
+    <div class="col-12 ">
+      <a class="carousel-adds position-relative">
+        <img class="img-fluid carousel-adds-img" [src]="img" alt="" />
+        <div class="arrows">
+          <div class="left-arrow arrow" (click)="onBackImg()"><</div>
+          <div class="right-arrow arrow" (click)="onNextImg()">></div>
+        </div>
+      </a>
+    </div>
+    <div class="col-4 offset-4">
+      <ul class="d-flex text-secondary justify-content-center">
+        <li
+          class="adds-img-bottom-pointer px-3"
+          *ngFor="let addImg of addsImg; let id = index"
+          [ngClass]="{ 'text-dark': img === addImg }"
+          (click)="onSelectAdd(id)"
+        ></li>
+      </ul>
+    </div>
+  </div>
+  <!-- end of carousel adds -->
+</div>

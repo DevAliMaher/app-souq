@@ -1,0 +1,55 @@
+.row {
+    height: 15rem;
+    .mobile-img {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    .mobile-desc {
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    
+    .mobile-storage {
+        font-size: 0.7rem;
+        &:hover {
+            background-color: white;
+            cursor: pointer;
+        }
+    }
+    
+    .min-details {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 767.98px) { 
+    .row {
+        height: 13rem;
+        .mobile-desc {
+            font-size: 0.8rem;
+        }
+        .mobile-price {
+            font-size: .8rem;
+        }
+        .details-button {
+            font-size: .8rem;
+        }
+    }
+ }
+
+ @media (max-width: 575.98px) { 
+    .row {
+        height: 9rem;
+        .mobile-desc {
+            font-size: 0.7rem;
+        }
+        .mobile-price {
+            font-size: 0.7rem;
+        }
+        .details-button {
+            font-size: 0.7rem;
+        }
+    }
+  }

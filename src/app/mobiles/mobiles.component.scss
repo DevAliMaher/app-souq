@@ -1,0 +1,26 @@
+::-webkit-scrollbar {
+    height: 6px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(187, 187, 189); 
+    border-radius: 50%;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(143, 140, 140); 
+  }
+
+  @media (max-width: 575.98px) { 
+   h4 {
+     font-size: 1rem;
+   }
+   ::-webkit-scrollbar {
+    height: 0px;
+  }
+  }
+
+
+

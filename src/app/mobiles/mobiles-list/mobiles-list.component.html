@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 d-none d-lg-block">
+      <h5>Brand</h5>
+      <hr>
+      <ul class="px-0" style="list-style: none;">
+        <li *ngFor="let brand of brands">
+          <input type="checkbox" class="brand" (click)="onSelect(brand)" [value]="brand" [id]="brand">
+          {{brand}}
+        </li>   
+      </ul>
+      <h5 class="mt-4">Price</h5>
+      <hr>
+      <div class="px-4">
+        <div>
+          <input class="form-check-input brand" type="checkbox" id="apple" >
+          <label class="form-check-label" for="Apple">1,000 - 9,999</label>
+        </div>
+        <div>
+          <input class="form-check-input brand" type="checkbox" id="samsung" >
+          <label class="form-check-label" for="samsung">10,000 - 19,999</label>
+        </div>
+        <div>
+          <input class="form-check-input brand" type="checkbox" id="huawei" >
+          <label class="form-check-label" for="huawei">20,000 & Above</label>
+        </div>
+      </div> 
+    </div>
+    <div class="col-12 col-lg-9 border-left">
+      <div *ngFor="let mobile of mobiles">
+        <app-mobile-list-item [mobile]="mobile" [index]="mobile.id"></app-mobile-list-item>
+      </div>
+    </div>
+  </div>
+  </div>

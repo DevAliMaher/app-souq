@@ -1,0 +1,68 @@
+<div class="container-fluid p-4">
+  <div class="container-lg">
+    <h6 class="text-uppercase">follow us</h6>
+
+    <a >
+      <fa-icon [icon]="faFacebookSquare" class="text-primary mr-2"></fa-icon>
+    </a>
+    <a >
+      <fa-icon [icon]="faTwitter" class="text-info mr-2"></fa-icon>
+    </a>
+    <a >
+      <fa-icon [icon]="faYoutube" class="text-danger mr-2"></fa-icon>
+    </a>
+    <a >
+      <fa-icon [icon]="faInstagram" class="text-secondary mr-2"></fa-icon>
+    </a>
+    <a >
+      <fa-icon [icon]="faPinterest" class="text-danger"></fa-icon>
+    </a>
+
+    <h6 class="text-uppercase mt-3">Download Our App</h6>
+    <a >
+      <fa-icon [icon]="faGooglePlay" class="text-danger mr-2"></fa-icon>
+    </a>
+    <a >
+      <fa-icon [icon]="faApple" class="text-secondary"></fa-icon>
+    </a>
+
+    <h6 class="text-uppercase mt-3">my account</h6>
+    <div class="my-account" *ngIf="!isUser">
+      <a routerLink="/user/sign-in">Log In</a>
+      <span> / </span>
+      <a routerLink="/user/sign-up">Register</a>
+    </div>
+    <div class="my-account">
+      <a routerLink="/shopping-cart">My Shopping Cart</a>
+    </div>
+    <div class="my-account">
+      <a >My Orders</a>
+    </div>
+    <div class="my-account">
+      <a >My Address</a>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-secondary p-3">
+  <div class="container-lg">
+    <p class="text-black font-weight-bold mb-1">&copy; {{year}} My Souq App</p>
+
+    <div>
+      <ul class="nav flex-row">
+        <li class="nav-item">
+          <a class="nav-link nav-link-end text-light py-1 px-0">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light py-1 px-0">Media Center</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light py-1 px-0">Policy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-light py-1 px-0">Terms & Conditions</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

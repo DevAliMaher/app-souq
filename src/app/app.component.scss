@@ -1,0 +1,52 @@
+// add class to main container-fluid
+.main-container {
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+}
+
+div {
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+}
+
+.router-outlet {
+  min-height: 50vh;
+}
+
+  .side-nav {
+    z-index: 50;
+  }
+
+  .side-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+  }
+
+    
+  .main-page {
+    background-color: #fafafa;
+    z-index: 60;
+    // nav-icon
+    .md-nav-button {
+      &:focus {
+        // box-shadow: none;
+        outline: none;
+      }
+    }
+
+
+    .header {
+      // z-index: 70;
+    }
+
+  }
+
