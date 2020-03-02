@@ -4,6 +4,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Backend : FireBase ... 
 
+you have to sign up and log in to use cart & admin features.
+
 After Login You can Manage Mobiles data under Admin..
 
 ## Development server
